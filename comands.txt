@@ -25,6 +25,7 @@ $ git init
 $ git config --global user.email "you@example.com"
 $ git config --global user.name "Your Name"
 
+// open another terminal and run just this code and leave it running $ npm run start
 $ heroku login -i
 $ heroku create <app name>
 $ heroku git:remote -a <app name>
