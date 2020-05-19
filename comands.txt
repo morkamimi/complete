@@ -1,0 +1,36 @@
+// Instructions are prefixed with ( // ) while commandline codes are prefixed with ( $ )
+// For Heroku
+// install vscode, nodejs, npm, git, heroku // installing nodejs will also install npm automatically
+https://code.visualstudio.com/download                              //download vscode
+https://nodejs.org/en/download/                                     // download nodejs
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git       //download git
+https://devcenter.heroku.com/articles/heroku-cli                   // download heroku
+https://signup.heroku.com/                                          // signup to heroku
+//  Open terminal in vscode
+$ npm i -g typescript // needed to run only once in a computer
+$ npm i -g nodemon // needed to run only once in a computer
+$ npm i -g node // needed to run only once in a computer
+
+
+
+
+
+
+
+
+$ npm install
+//  open another terminal and run just this code and leave it running $ npm run start
+//  Go back to the previous terminal and continue
+$ git init
+
+
+
+$ heroku login -i
+$ heroku create <app name>
+$ heroku git:remote -a <app name>
+$ heroku config:set NODE_MODULES_CACHE=false
+$ git add .
+$ git commit -m "init/heroku"
+$ git push heroku master
+$ heroku ps:scale web=1
+$ heroku open

